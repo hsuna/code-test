@@ -1,0 +1,22 @@
+{
+  "name": "webassembly",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "gulp --gulpfile ./build.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@wasm/studio-utils": "*",
+    "gulp": "~3.9.1",
+    "ts-node": "~5.0.0",
+    "typescript": "~2.7.2"
+  },
+  "wasmStudio": {
+    "name": "Empty C Project",
+    "description": "# Empty C Project",
+    "icon": "c-lang-file-icon"
+  }
+}
