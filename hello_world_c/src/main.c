@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 #include <sys/uio.h>
 
@@ -5,7 +6,8 @@
 
 WASM_EXPORT
 int main(void) {
-  printf("Hello World\n");
+  printf("Hello World\n132");
+  return 40;
 }
 
 /* External function that is implemented in JavaScript. */

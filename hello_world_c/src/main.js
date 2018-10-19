@@ -12,7 +12,6 @@ function syscall(instance, n, args) {
     case /* writev */ 146:
       return instance.exports.writev_c(args[0], args[1], args[2]);
     case /* mmap2 */ 192:
-      debugger;
       const memory = instance.exports.memory;
       let memoryState = memoryStates.get(instance);
       const requested = args[1];
