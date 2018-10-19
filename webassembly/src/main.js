@@ -1,8 +1,7 @@
 loadWebAssembly('math.wasm').then(instance => {
-  const square = instance.exports._square
-  console.log('2^2 =', square(2))
-  console.log('3^2 =', square(3))
-  console.log('(2 + 5)^2 =', square(2 + 5))
+  const add = instance.exports.add
+  console.log('2+2 =', add(2+2))
+  console.log('3+2 =', add(3+2))
 })
   
 
