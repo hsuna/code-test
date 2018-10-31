@@ -1,0 +1,73 @@
+<html>
+
+<head>
+    <title>滑块验证码</title>
+    <meta charset="utf-8">
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <!--<meta http-equiv="pragma" content="no-cache">-->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="address=no">
+
+    <!--for baidu 识别移动端页面并禁止百度转码-->
+    <!-- <meta name="applicable-device" content="mobile">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes"> -->
+    <link rel="stylesheet" href="./css/reset.css" />
+</head>
+
+<body>
+    <script>
+        ;(function(){
+            function ajax(path, success) {
+                //1.声明异步请求对象：
+                var xmlHttp = null;
+                if (window.ActiveXObject) {
+                    // IE6, IE5 浏览器执行代码
+                    xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+                } else if (window.XMLHttpRequest) {
+                    // IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+                    xmlHttp = new XMLHttpRequest();
+                }
+                //2.如果实例化成功，就调用open（）方法：
+                if (xmlHttp != null) {
+                    xmlHttp.open("get", path, true);
+                    xmlHttp.send();
+                    xmlHttp.onreadystatechange = doResult; //设置回调函数                 
+                }
+                function doResult() {
+                    if (xmlHttp.readyState == 4) { //4表示执行完成
+                        if (xmlHttp.status == 200) { //200表示执行成功
+                            success && success(xmlHttp.responseText)
+                        }
+                    }
+                }
+            }
+
+            class BaseScript {
+                constructor(id){
+                    this.id = id
+                    this.isStop = false
+                }
+            }
+
+           const getSubClass = code => (self => {
+                new Function(code).call(self)
+                let subClass = self.default || self.SubScript && ('function' === typeof self.SubScript ? self.SubScript : self.SubScript.default)
+                return subClass(BaseScript)
+            })({})
+
+
+            ajax('./js/DemoScript.js', function(code){
+                //let SubScript = new Function(`return ${code.replace(/^[\+\-\*\/\!]*(function)/, "$1")}`)()(BaseScript)
+                var SubScript1 = getSubClass(code)
+                var sub = new SubScript1()
+                console.log(sub.name)
+            })
+        })()
+    </script>
+</body>
+
+</html>
