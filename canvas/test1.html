@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <canvas id="canvas" width="500" height="440"></canvas>
+        <script>
+            (function(){
+                var canvas = document.getElementById('canvas')
+                var ctx = canvas.getContext("2d")
+
+                var image = new Image()
+                image.onload = function(){
+                    ctx.drawImage(image, 0, 0);
+
+                    ctx.translate(40, 40);
+                    ctx.drawImage(image, 0, 0);
+                }
+                image.src = './images/1.jpg'
+            })();
+        </script>
+    </body>
+</html>

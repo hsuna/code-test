@@ -1,0 +1,104 @@
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <canvas id="canvas" width="500" height="440"></canvas>
+        <script>
+            class DisplayObject{
+                constructor(){
+                    this.x = 0;
+                    this.y = 0;
+                    this._children = [];
+                }
+                addChild(child){
+                    this._children.push(child);
+                }
+                removeChild(child){
+                    let index = this._children.indexOf(child);
+                    this._children.splice(index, 1)[0];
+                    return child;
+                }
+                render(ctx) {
+                    for(let i= 0, len=this._children.length; i<len; i++)
+                    {
+                        let child = this._children[i];
+                        ctx.save();
+                        if(child){
+                            ctx.translate(child.x, child.y);
+                            ctx.fillStyle="rgba(255,0,0,0.3)";
+                            ctx.fillRect(0,0,200,100);
+                            child.render(ctx);
+                        }
+                        ctx.restore();
+                    }
+                }
+            }
+
+            class Stage extends DisplayObject {
+                constructor(id){
+                    super();
+                    this._canvas = document.getElementById(id);
+                    this._ctx2d = this._canvas.getContext("2d");
+                    this._tick = -1;
+                }
+                clear() {
+                    if (!this._ctx2d) { return; }
+                    this._ctx2d.setTransform(1, 0, 0, 1, 0, 0);
+                    this._ctx2d.clearRect(0, 0, this._canvas.width+1, this._canvas.height+1);
+                }
+                startTick(value){
+                    if(-1 != this._tick) return;
+                    this._tick = setInterval(_ => {
+                        this.clear();
+                        this.render(this._ctx2d);
+                    }, 1000/value);
+                }
+                stopTick(){
+                    if(-1 == this._tick) return;
+                    clearInterval(this._tick);
+                    this._tick = -1;
+                }
+            }
+
+            class Bitmap extends DisplayObject {
+                constructor(skin){
+                    super();
+                    this._orgskin = skin;
+                    this.image = new Image();
+                    this.image.src = this._orgskin;
+                }
+                
+                render(ctx) {
+                    ctx.drawImage(this.image, 0, 0, this.image.width, this.image.height);
+                    super.render(ctx);
+                }
+            }
+
+            (function(){
+                var stage = new Stage('canvas');
+                stage.startTick(60);
+
+                var node1 = new DisplayObject();
+                node1.x = 0;
+                node1.y = 0;
+                stage.addChild(node1);
+
+                var img1 = new Bitmap('./images/1.jpg')
+                img1.x = 10;
+                img1.y = 10;
+                node1.addChild(img1);
+
+                var node2 = new DisplayObject();
+                node2.x = 100;
+                node2.y = 100;
+                stage.addChild(node2);
+
+                var img2 = new Bitmap('./images/2.jpg')
+                img2.x = 30;
+                img2.y = 30;
+                node2.addChild(img2);
+            })();
+        </script>
+    </body>
+</html>
