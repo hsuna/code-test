@@ -1,0 +1,165 @@
+#loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    font-size: 0;
+    overflow: hidden;
+
+    display: -webkit-box;
+    display: box;
+
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    -webkit-box-orient: vertical;
+
+    box-align: center;
+    box-pack: center;
+    box-orient: vertical;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(../img/loading-bg.jpg);
+}
+#loading .logo{width: 1.48rem;position: absolute;bottom: .9rem;left: 50%;margin-left:-.74rem}
+
+#loading .loading-ct {
+    position: relative;
+    width: 7.5rem;
+    height: 7.5rem;
+    margin: auto;
+    text-align: center;
+    display: -webkit-box;
+    display: box;
+
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    -webkit-box-orient: vertical;
+
+    box-align: center;
+    box-pack: center;
+    box-orient: vertical;
+}
+
+#loading .loading-icon {
+    position: absolute;
+    left: .6rem;
+    top: 1.8rem;
+    animation: loading-updown 3s ease infinite;
+    -webkit-animation: loading-updown 3s ease infinite;
+}
+
+#loading .loading-icon img {
+    width: 1.23rem;
+}
+
+#loading .loading-bar {
+    width: 4.13rem;
+    height: 0.41rem;
+    position: relative;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(../img/loading-progress-wrap.png);
+    overflow: hidden;
+    z-index: -1;
+}
+
+#loading .loading-bar-ct {
+    position: absolute;
+    top:-.02rem;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/loading-progress.png);
+    background-color: transparent;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#loading .addBefore::before {
+    position: absolute;
+    width: 0;
+    height: 100%;
+    left: 0;
+    content: '';
+    /* background-color: transparent; */
+    border: 1px solid #171717;
+    z-index: 9;
+}
+
+#loading .loading-tips {
+    top: 7.82rem;
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    color: #acacac;
+    transition: all 0.5s;
+}
+
+#loading .loading-msg {
+    height: 0.39rem;
+    width: 0.83rem;
+    margin-left: -0.445rem;
+    background: url(../img/loading-num.png) no-repeat top/100%;
+    font-size: .22rem;
+    text-align: center;
+    color: #000;
+    font-weight: 600;
+}
+
+#loading .loading-text {
+    width: 1.23rem;
+    margin-top: .15rem;
+}
+
+#loading.loading_willLeave {
+    opacity: 0;
+    -webkit-transition: all 0.1s;
+    transition: all 0.1s;
+}
+
+#emptymask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #f9f2d9;
+    z-index: 1001;
+}
+
+@keyframes loading-updown {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    50% {
+        -webkit-transform: translateY(30px);
+        transform: translateY(30px);
+    }
+
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+@-webkit-keyframes loading-updown {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    50% {
+        -webkit-transform: translateY(30px);
+        transform: translateY(30px);
+    }
+
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}

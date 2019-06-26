@@ -9,6 +9,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "assemblyscript": "github:assemblyscript/assemblyscript"
-  }
+    "assemblyscript": "github:assemblyscript/assemblyscript",
+    "reflect-metadata": "^0.1.13"
+  },
+  "dependencies": {}
 }

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"　、>
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="format-detection" content="address=no" />
+    <meta name="applicable-device" content="mobile" />
+    <meta name="full-screen" content="yes" />
+    <meta name="x5-full-screen" content="yes" />
+    <meta name="screen-orientation" content="portrait" />
+    <meta name="x5-orientation" content="portrait" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>潮爆战纪</title>
+    <link rel="stylesheet" href="./static/css/loading.min.css" />
+    <script src="./static/js/configs.min.js"></script>
+  </head>
+  <body>
+    <noscript>
+      <strong>We're sorry but vue-ts doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div id="app"></div>
+    <div id="loading" data-mainfest="<%= htmlWebpackPlugin.options.name %>">
+      <div class="loading-ct">
+          <div class="loading-icon">
+              <img src="./static/img/loading-icon.png" />
+          </div>
+          <div>
+              <div style="width:3.89rem;margin:auto">
+                  <div class="loading-msg" id="loadingMsg">0%</div>
+              </div>
+              <div class="loading-bar ">
+                  <div class="loading-bar-ct" id="loadingBar" style="width:100%"></div>
+              </div>
+              <img  class="loading-text" src="./static/img/loading-text.png" alt="">
+          </div>
+      </div>
+      <img style="width: 1.48rem;position: absolute;bottom: .9rem;left: 50%;margin-left:-.74rem" class="logo" src="./static/img/logo.png" />
+    </div>
+    <script src="./static/js/loading.min.js"></script>
+    <!-- built files will be auto injected -->
+  </body>
+</html>

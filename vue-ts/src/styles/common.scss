@@ -1,0 +1,102 @@
+@import "reset.scss";
+
+html,
+body {
+	// height:100%;
+	width: 100%;
+	overflow-x: hidden;
+	background-size: 100% 100%;
+	background-attachment: fixed;
+}
+
+* {
+	-webkit-tap-highlight-color: transparent;
+}
+
+::-webkit-scrollbar {
+	display: none;
+}
+
+// vue fade
+.fade-enter-active,
+.fade-leave-active {
+	transition: opacity .15s
+}
+
+.fade-enter,
+.fade-leave-active {
+	opacity: 0
+}
+
+//过渡
+.eg {
+	transition: all .3s ease 0s;
+}
+
+//动画
+.fadeIn {
+	animation: fadeIn 0.3s ease 0s normal;
+}
+
+.fadeOut {
+	animation: fadeOut 0.3s ease 0s normal;
+}
+
+.toast-mask {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 999;
+
+	.toast-msg {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		font-size: 0.28rem;
+		padding: 0.2rem 0.3rem;
+		border-radius: 0.08rem;
+		background: rgba(0, 0, 0, 0.8);
+		line-height: 1.5;
+		z-index: 999;
+		text-align: center;
+		width: 4rem;
+		color: #fff;
+		word-break: break-all;
+	}
+}
+@keyframes role-updown {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    50% {
+        -webkit-transform: translateY(10px);
+        transform: translateY(10px);
+    }
+
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+@-webkit-keyframes role-updown {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    50% {
+        -webkit-transform: translateY(10px);
+        transform: translateY(10px);
+    }
+
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
