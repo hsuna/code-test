@@ -35,11 +35,11 @@ const PreloadStore = namespace('Preload')
   },
 })
 export default class Prehot extends Vue {
-	@State state
+	//@State Preload
 	@PreloadStore.State is_ios
 	
 	created() {
-		console.log(this.is_ios)
+		//console.log(this.Preload)
 	}
 }
 </script>
