@@ -18,12 +18,6 @@ class ComponentVisible extends React{
 }
 
 
-
-
-
-
-
-
 function visible(WrappedComponent) {
     return class extends WrappedComponent{
         state={

@@ -13,7 +13,8 @@ interface RES {
     msg: string,
     data?: any
 }
-export const fetch2 = function<T> (url:string, params?:any): Promise<T|Error> {
+
+export const fetch2 = function (url:string, params?:any): Promise<RES> {
     // dosomething
     return new Promise((resolve, reject) => {
 
