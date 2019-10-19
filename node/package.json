@@ -8,9 +8,7 @@
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "aws-sdk": "git+http://git.3k.com/web/PM/hw-20181228-aws-sdk.git#master",
-    "cheerio": "^1.0.0-rc.3",
-    "request": "^2.88.0"
+  "devDependencies": {
+    "node-xlsx": "^0.15.0"
   }
 }
