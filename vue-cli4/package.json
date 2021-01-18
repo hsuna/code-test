@@ -1,0 +1,23 @@
+{
+  "name": "vue-cli3",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "webpack-dev-server --color"
+  },
+  "dependencies": {
+    "core-js": "^2.6.5",
+    "element-plus": "v1.0.1-beta.24",
+    "vue": "^3.0.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.4",
+    "@babel/preset-env": "^7.11.0",
+    "@vue/compiler-sfc": "^3.0.5",
+    "html-webpack-plugin": "^4.3.0",
+    "vue-loader": "^16.1.2",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  }
+}

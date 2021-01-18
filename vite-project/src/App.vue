@@ -1,17 +1,10 @@
 <template>
-  <span v-html="state.msg"></span>
+  <img alt="Vue logo" src="./assets/logo.png" />
+  <HelloWorld msg="Hello Vue 3 + Vite" />
 </template>
 
 <script setup>
-import { reactive } from 'vue'
-import hljs from './hljs';
-
-const state = reactive({ msg: '' })
-state.msg = hljs.highlightAuto(`
-  let a = 1;
-  let b = 2;
-  [a, b] = [b, a];
-`).value;
+import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <style>
