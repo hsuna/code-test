@@ -1,6 +1,8 @@
 {
   "pages": [
-    "index/index"
+    "pages/index/index",
+    "pages/photo/index",
+    "pages/arphoto/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

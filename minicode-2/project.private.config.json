@@ -1,0 +1,30 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/animation/animation",
+          "pathName": "pages/animation/animation",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/arphoto/index",
+          "pathName": "pages/arphoto/index",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}
